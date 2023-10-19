@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="styles.css">
+  <title>Seat Selection</title>
+</head>
+<body>
+  <div class="container">
+    <h1>Movie Theater Seat Selection</h1>
+    <div class="seats-container"></div>
+    <p>Total Selected Seats: <span id="count">0</span></p>
+  </div>
+  <script src="script.js"></script>
+</body>
+</html>
+<html>
+<body>
+  
+</body>
+</html>
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Seat Selection</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <div class="container">
+        <div class="seats"></div>
+        <a href=""><button id="checkoutBtn">Checkout</button>
+    </div>
+    <script src="script.js"></script>
+</body>
+</html>
+<style>body {
+  font-family: Arial, sans-serif;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+  margin: 0;
+}
+
+.container {
+  text-align: center;
+}
+
+.seat {
+  width: 40px;
+  height: 40px;
+  margin: 5px;
+  border: 1px solid #ccc;
+  display: inline-block;
+  cursor: pointer;
+}
+
+.seat.selected {
+  background-color: #28a745;
+  color: #fff;
+}
+</style><script>const seatsContainer = document.querySelector('.seats-container');
+const count = document.getElementById('count');
+
+let selectedSeats = 0;
+
+// Create seats
+const seatCount = 10;
+
+for (let i = 1; i <= seatCount; i++) {
+  const seat = document.createElement('div');
+  seat.classList.add('seat');
+  seat.innerText = i;
+  seat.addEventListener('click', () => {
+    seat.classList.toggle('selected');
+    if (seat.classList.contains('selected')) {
+      selectedSeats++;
+    } else {
+      selectedSeats--;
+    }
+    updateSelectedSeats();
+  });
+  seatsContainer.appendChild(seat);
+}
+
+function updateSelectedSeats() {
+  count.innerText = selectedSeats;
+}
+</script>
